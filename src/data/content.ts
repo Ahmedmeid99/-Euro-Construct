@@ -140,12 +140,16 @@ export const projects: Project[] = [
 ];
 
 export const services = [
-  { title: 'General Contracting', icon: Construction, text: 'Full project execution with quality and safety commitment.' },
-  { title: 'Construction Management', icon: ClipboardCheck, text: 'Managing site teams, resources, schedules, and progress.' },
-  { title: 'Site Survey', icon: Ruler, text: 'Existing site conditions and measurements.' },
-  { title: 'Geotechnical Investigation', icon: Layers3, text: 'Subsurface soil and foundation assessment.' },
-  { title: 'Renovation Works', icon: Building2, text: 'Building renovation and finishing activities, repair and upgrade works, plus interior renovation and fit-out.' },
+  { title: 'General Contracting', icon: Construction, text: 'Full project execution with quality and safety commitment.', image: '/profile/project-17.jpg' },
+  { title: 'Construction Management', icon: ClipboardCheck, text: 'Managing site teams, resources, schedules, and progress.', image: '/profile/project-13.jpg' },
+  { title: 'Site Survey', icon: Ruler, text: 'Existing site conditions and measurements.', image: '/profile/project-01.jpg' },
+  { title: 'Geotechnical Investigation', icon: Layers3, text: 'Subsurface soil and foundation assessment.', image: '/profile/project-09.jpg' },
+  { title: 'Renovation Works', icon: Building2, text: 'Building renovation and finishing activities, repair and upgrade works, plus interior renovation and fit-out.', image: '/profile/project-14.jpg' },
 ];
+
+export type Service = (typeof services)[number];
+export const getServiceSlug = (service: Service) => service.title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+export const getServiceBySlug = (slug: string) => services.find((service) => getServiceSlug(service) === slug);
 
 export const capabilities = [
   { title: 'Skilled Manpower', text: 'Experienced engineers, supervisors, and site teams.', icon: Users },
@@ -186,6 +190,21 @@ export const clients = [
   'Nusuk Hajj', 'Jeddah Islamic Port', 'Ministry of Transport and Logistic Services',
   'State Properties General Authority',
 ];
+
+export const clientLogos = [
+  { name: 'Ministry of Finance', image: '/logos/ministry-of-finance-transparent.png' },
+  { name: 'Zakat, Tax and Customs Authority', image: '/logos/zatca-transparent.png' },
+  { name: 'Ministry of Hajj and Umrah', image: '/logos/ministry-hajj-umrah-transparent.png' },
+  { name: 'Euro Consult for Engineering Consultancy', image: '/logos/euro-consult-transparent.png' },
+  { name: 'Nusuk Hajj', image: '/logos/nusuk-hajj-transparent.png' },
+  { name: 'Ministry of Transport and Logistic Services', image: '/logos/ministry-transport-transparent.png' },
+  { name: 'Ministry of Municipal & Rural Affairs', image: '/logos/municipal-affairs-transparent.png' },
+  { name: 'Kidana', image: '/logos/kidana-transparent.png' },
+  { name: 'Saudi Cement', image: '/logos/saudi-cement-transparent.png' },
+  { name: 'Jeddah Islamic Port', image: '/profile/clients/Picture56.png.webp' },
+  { name: 'Ministry of Education', image: '/logos/ministry-of-education-transparent.png' },
+  { name: 'State Properties General Authority', image: '/logos/state-properties-authority-transparent.png' },
+] as const;
 
 export const navItems = ['Home', 'About', 'Capabilities', 'Services', 'Projects', 'Clients', 'Contact'] as const;
 

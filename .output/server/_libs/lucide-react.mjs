@@ -85,6 +85,21 @@ var ArrowLeft = createLucideIcon("ArrowLeft", [["path", {
 	key: "x3x0zl"
 }]]);
 //#endregion
+//#region node_modules/lucide-react/dist/esm/icons/arrow-right.js
+/**
+* @license lucide-react v0.446.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ArrowRight = createLucideIcon("ArrowRight", [["path", {
+	d: "M5 12h14",
+	key: "1ays0h"
+}], ["path", {
+	d: "m12 5 7 7-7 7",
+	key: "xquz4c"
+}]]);
+//#endregion
 //#region node_modules/lucide-react/dist/esm/icons/arrow-up-right.js
 /**
 * @license lucide-react v0.446.0 - ISC
@@ -217,6 +232,23 @@ var ClipboardCheck = createLucideIcon("ClipboardCheck", [
 		key: "df797q"
 	}]
 ]);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/compass.js
+/**
+* @license lucide-react v0.446.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Compass = createLucideIcon("Compass", [["path", {
+	d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
+	key: "9ktpf1"
+}], ["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}]]);
 //#endregion
 //#region node_modules/lucide-react/dist/esm/icons/construction.js
 /**
@@ -446,6 +478,41 @@ var MoveRight = createLucideIcon("MoveRight", [["path", {
 	key: "1m8cig"
 }]]);
 //#endregion
+//#region node_modules/lucide-react/dist/esm/icons/pause.js
+/**
+* @license lucide-react v0.446.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Pause = createLucideIcon("Pause", [["rect", {
+	x: "14",
+	y: "4",
+	width: "4",
+	height: "16",
+	rx: "1",
+	key: "zuxfzm"
+}], ["rect", {
+	x: "6",
+	y: "4",
+	width: "4",
+	height: "16",
+	rx: "1",
+	key: "1okwgv"
+}]]);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/play.js
+/**
+* @license lucide-react v0.446.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Play = createLucideIcon("Play", [["polygon", {
+	points: "6 3 20 12 6 21 6 3",
+	key: "1oa8hb"
+}]]);
+//#endregion
 //#region node_modules/lucide-react/dist/esm/icons/ruler.js
 /**
 * @license lucide-react v0.446.0 - ISC
@@ -562,4 +629,4 @@ var X = createLucideIcon("X", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { ArrowLeft, ArrowUpRight, Building2, Check, ChevronDown, ChevronRight, CircleCheck, ClipboardCheck, Construction, FileCheck2, HardHat, Landmark, Layers3, MapPin, Menu, MoveRight, Ruler, ShieldCheck, Target, Users, X };
+export { ArrowLeft, ArrowRight, ArrowUpRight, Building2, Check, ChevronDown, ChevronRight, CircleCheck, ClipboardCheck, Compass, Construction, FileCheck2, HardHat, Landmark, Layers3, MapPin, Menu, MoveRight, Pause, Play, Ruler, ShieldCheck, Target, Users, X };

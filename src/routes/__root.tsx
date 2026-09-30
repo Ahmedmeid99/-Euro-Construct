@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-router';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { LanguageProvider } from '@/context/LanguageContext';
+import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 import appCss from '@/index.css?url';
 
 const description =
@@ -68,12 +68,13 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 }
 
 function NotFound() {
+  const { isArabic } = useLanguage();
   return (
     <section className="page-header section-dark">
       <div className="container page-header-inner">
         <div className="eyebrow light"><span /> 404</div>
-        <h1>That page could not be found.</h1>
-        <Link className="button" to="/">Return home</Link>
+        <h1>{isArabic ? 'تعذر العثور على هذه الصفحة.' : 'That page could not be found.'}</h1>
+        <Link className="button" to="/">{isArabic ? 'العودة للرئيسية' : 'Return home'}</Link>
       </div>
     </section>
   );

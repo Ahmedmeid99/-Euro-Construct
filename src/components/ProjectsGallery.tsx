@@ -1,8 +1,11 @@
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Link, useSearch } from '@tanstack/react-router';
 import { categories, getProjectSlug, projects } from '@/data/content';
+import { useLanguage } from '@/context/LanguageContext';
+import { arabicLocation, categoryArabic, projectNameArabic } from '@/data/arabic';
 
 function ProjectsGallery() {
+  const { isArabic } = useLanguage();
   const { category } = useSearch({ from: '/projects' });
   const activeCategory = category ?? 'All';
   const filteredProjects = activeCategory === 'All'
@@ -11,7 +14,7 @@ function ProjectsGallery() {
 
   return (
     <>
-      <nav className="filter-row reveal" aria-label="Filter projects by category">
+      <nav className="filter-row reveal" aria-label={isArabic ? 'تصفية المشاريع حسب الفئة' : 'Filter projects by category'}>
         {categories.map((filter) => {
           const isActive = activeCategory === filter;
           return (
@@ -23,7 +26,7 @@ function ProjectsGallery() {
               aria-current={isActive ? 'page' : undefined}
               resetScroll={false}
             >
-              {filter}
+              {isArabic ? categoryArabic[filter] : filter}
               <span>{filter === 'All' ? projects.length : projects.filter((project) => project.category === filter).length}</span>
             </Link>
           );
@@ -42,15 +45,15 @@ function ProjectsGallery() {
             <div className="project-image">
               <img
                 src={project.image}
-                alt={`${project.name} project image`}
+                alt={isArabic ? `صورة مشروع ${projectNameArabic[project.name] || project.name}` : `${project.name} project image`}
                 loading={index > 2 ? 'lazy' : 'eager'}
               />
-              <span>{project.category}</span>
+              <span>{isArabic ? categoryArabic[project.category] : project.category}</span>
             </div>
             <div className="project-info">
               <div>
-                <h3>{project.name}</h3>
-                <p><MapPin size={14} />{project.location}</p>
+                <h3>{isArabic ? projectNameArabic[project.name] || project.name : project.name}</h3>
+                <p><MapPin size={14} />{isArabic ? arabicLocation(project.location) : project.location}</p>
               </div>
               <ArrowUpRight size={20} />
             </div>
@@ -59,7 +62,7 @@ function ProjectsGallery() {
       </div>
 
       <div className="project-count">
-        Showing <strong>{filteredProjects.length}</strong> of {projects.length} relevant experience entries
+        {isArabic ? <>عرض <strong>{filteredProjects.length}</strong> من أصل {projects.length} مشروعاً</> : <>Showing <strong>{filteredProjects.length}</strong> of {projects.length} relevant experience entries</>}
       </div>
     </>
   );

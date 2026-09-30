@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { ChevronDown, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, MoveRight } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
-import { services } from '@/data/content';
+import { getServiceSlug, services } from '@/data/content';
 import PageHeader from '@/components/PageHeader';
 import useReveal from '@/components/useReveal';
+import { useLanguage } from '@/context/LanguageContext';
+import { serviceArabic } from '@/data/arabic';
 
 function ServicesPage() {
-  const [expandedService, setExpandedService] = useState<string | null>(null);
+  const { isArabic } = useLanguage();
   useReveal();
 
   return (
@@ -25,23 +26,15 @@ function ServicesPage() {
         <div className="container">
           <div className="services-grid">
             {services.map(({ title, icon: Icon, text }) => (
-              <article className={`service-card reveal ${expandedService === title ? 'expanded' : ''}`} key={title}>
+              <Link className="service-card service-card-link reveal" to="/services/$serviceId" params={{ serviceId: getServiceSlug(services.find((service) => service.title === title)!) }} key={title}>
                 <div className="service-top">
                   <div className="service-icon"><Icon size={22} /></div>
                   <span>0{services.findIndex((service) => service.title === title) + 1}</span>
                 </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <button className="text-button" onClick={() => setExpandedService(expandedService === title ? null : title)}>
-                  {expandedService === title ? 'Close details' : 'Learn more'}
-                  <ChevronDown className={expandedService === title ? 'rotated' : ''} size={16} />
-                </button>
-                {expandedService === title && (
-                  <div className="service-detail">
-                    A considered approach to planning, coordination, resource management and quality control keeps the work clear from start to finish.
-                  </div>
-                )}
-              </article>
+                <h3>{isArabic ? serviceArabic[title][0] : title}</h3>
+                <p>{isArabic ? serviceArabic[title][1] : text}</p>
+                <span className="text-button">{isArabic ? 'عرض تفاصيل الخدمة' : 'View service details'} <MoveRight size={16} /></span>
+              </Link>
             ))}
           </div>
         </div>
@@ -49,10 +42,10 @@ function ServicesPage() {
 
       <section className="cta section-dark">
         <div className="container cta-inner reveal">
-          <div className="section-label light">Quality & safety</div>
-          <h2>Built responsibly.<br /><em>Delivered reliably.</em></h2>
-          <p>Safe working practices, quality control, reliable project execution and responsible construction — built into every engagement.</p>
-          <Link className="button" to="/contact">Discuss your next project <ArrowUpRight size={17} /></Link>
+          <div className="section-label light">{isArabic ? 'الجودة والسلامة' : 'Quality & safety'}</div>
+          <h2>{isArabic ? <>نبني بمسؤولية.<br /><em>ونسلّم بموثوقية.</em></> : <>Built responsibly.<br /><em>Delivered reliably.</em></>}</h2>
+          <p>{isArabic ? 'ممارسات عمل آمنة وضبط للجودة وتنفيذ موثوق وبناء مسؤول في كل مشروع.' : 'Safe working practices, quality control, reliable project execution and responsible construction — built into every engagement.'}</p>
+          <Link className="button" to="/contact">{isArabic ? 'ناقش مشروعك القادم' : 'Discuss your next project'} <ArrowUpRight size={17} /></Link>
         </div>
       </section>
     </>

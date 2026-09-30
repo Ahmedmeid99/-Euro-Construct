@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import Brand from './Brand';
-import { navItems, navPaths } from '@/data/content';
+import { getServiceSlug, navItems, navPaths, services } from '@/data/content';
 import { useLanguage } from '@/context/LanguageContext';
 
 const arabicNav = {
@@ -33,11 +33,17 @@ function Footer() {
           </div>
           <div>
             <span>{isArabic ? 'الخدمات' : 'Services'}</span>
-            <Link className="footer-link" to="/services">{isArabic ? 'المقاولات العامة' : 'General Contracting'}</Link>
-            <Link className="footer-link" to="/services">{isArabic ? 'إدارة الإنشاءات' : 'Construction Management'}</Link>
-            <Link className="footer-link" to="/services">{isArabic ? 'الرفع المساحي' : 'Site Survey'}</Link>
-            <Link className="footer-link" to="/services">{isArabic ? 'الدراسات الجيوتقنية' : 'Geotechnical Investigation'}</Link>
-            <Link className="footer-link" to="/services">{isArabic ? 'أعمال الترميم' : 'Renovation Works'}</Link>
+            {services.map((service) => (
+              <Link className="footer-link" to="/services/$serviceId" params={{ serviceId: getServiceSlug(service) }} key={service.title}>
+                {isArabic ? ({
+                  'General Contracting': 'المقاولات العامة',
+                  'Construction Management': 'إدارة الإنشاءات',
+                  'Site Survey': 'الرفع المساحي',
+                  'Geotechnical Investigation': 'الدراسات الجيوتقنية',
+                  'Renovation Works': 'أعمال الترميم',
+                } as Record<string, string>)[service.title] : service.title}
+              </Link>
+            ))}
           </div>
           <div>
             <span>{isArabic ? 'المكاتب' : 'Offices'}</span>
