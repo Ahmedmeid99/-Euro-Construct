@@ -1,4 +1,4 @@
-import { ArrowUpRight, Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ChevronRight, ChevronDown, Languages } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import Brand from './Brand';
@@ -25,13 +25,16 @@ function Header() {
     return () => window.removeEventListener('scroll', updateHeader);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   return (
     <>
       <header className={`site-header ${scrolled ? 'is-scrolled' : 'is-top'}`}>
         <div className="container site-header-inner">
-          <Link to="/" className="header-brand-btn" aria-label="Euro Construct home">
-            <Brand />
-          </Link>
+          <Brand onClick={closeMenu} />
           <nav className="desktop-nav" aria-label="Main navigation">
             <Link className="nav-link" to="/" activeProps={{ className: 'nav-link nav-active' }} activeOptions={{ exact: true }}>
               {isArabic ? arabicNav.Home : 'Home'}
@@ -54,14 +57,14 @@ function Header() {
               </Link>
             ))}
           </nav>
-          <button className="language-switch" type="button" onClick={toggleLanguage} aria-label={isArabic ? 'Switch to English' : 'التبديل إلى العربية'}>
+          <button className="language-switch desktop-language-switch" type="button" onClick={toggleLanguage} aria-label={isArabic ? 'Switch to English' : 'التبديل إلى العربية'}>
             {isArabic ? 'EN' : 'العربية'}
           </button>
           <Link className="button button-small header-cta" to="/contact">
             {isArabic ? 'تواصل معنا' : 'Contact Us'} <ArrowUpRight size={16} />
           </Link>
-          <button className="menu-button" aria-label="Open navigation" onClick={() => setMenuOpen(true)}>
-            <Menu size={22} />
+          <button className="menu-button" aria-label={isArabic ? 'فتح القائمة' : 'Open navigation'} onClick={() => setMenuOpen(true)}>
+            <Menu size={16} />
           </button>
         </div>
       </header>
@@ -69,29 +72,37 @@ function Header() {
       {menuOpen && (
         <div className="mobile-nav-wrap">
           <div className="mobile-nav-backdrop" onClick={closeMenu} />
-          <aside className="mobile-nav" aria-label="Mobile navigation">
+          <aside className="mobile-nav" aria-label={isArabic ? 'قائمة الجوال' : 'Mobile navigation'}>
             <div className="mobile-nav-top">
               <Brand />
-              <button className="icon-button" aria-label="Close navigation" onClick={closeMenu}>
-                <X size={22} />
+              <button className="icon-button" aria-label={isArabic ? 'إغلاق القائمة' : 'Close navigation'} onClick={closeMenu}>
+                <X size={16} />
               </button>
             </div>
-            {navItems.map((item) => (
-              <Link
-                key={item}
-                className="mobile-nav-link"
-                to={navPaths[item]}
-                activeProps={{ className: 'mobile-nav-link nav-active' }}
-                activeOptions={{ exact: item === 'Home' }}
-                onClick={closeMenu}
-              >
-                {isArabic ? arabicNav[item] : item}
-                <ChevronRight size={18} />
+            <div className="mobile-nav-links">
+              {navItems.map((item, index) => (
+                <Link
+                  key={item}
+                  className="mobile-nav-link"
+                  to={navPaths[item]}
+                  activeProps={{ className: 'mobile-nav-link nav-active' }}
+                  activeOptions={{ exact: item === 'Home' }}
+                  onClick={closeMenu}
+                  style={{ animationDelay: `${index * 40}ms` }}
+                >
+                  {isArabic ? arabicNav[item] : item}
+                  <ChevronRight size={18} />
+                </Link>
+              ))}
+              <button className="mobile-language-switch" type="button" onClick={toggleLanguage} aria-label={isArabic ? 'Switch to English' : 'التبديل إلى العربية'}>
+                <Languages size={16} />
+                <span>{isArabic ? 'English' : 'العربية'}</span>
+                <small>{isArabic ? 'EN' : 'AR'}</small>
+              </button>
+              <Link className="button mobile-contact-button" to="/contact" onClick={closeMenu}>
+                {isArabic ? 'تواصل معنا' : 'Contact Us'} <ArrowUpRight size={17} />
               </Link>
-            ))}
-            <Link className="button" to="/contact" onClick={closeMenu}>
-              {isArabic ? 'تواصل معنا' : 'Contact Us'} <ArrowUpRight size={17} />
-            </Link>
+            </div>
           </aside>
         </div>
       )}

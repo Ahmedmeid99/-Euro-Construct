@@ -39,9 +39,13 @@ function CapabilitiesPage() {
 
       <section className="ethics section-dark">
         <div className="ethics-lines" />
-        <div className="container ethics-content">
-          <div className="section-label light">{isArabic ? 'منهجيتنا' : 'Our approach'}</div>
-          <div className="ethics-copy">
+        <div className="container approach-layout">
+          <div className="approach-image reveal">
+            <img src="/profile/project-02.jpg" alt={isArabic ? 'تنفيذ أعمال البنية التحتية في الموقع' : 'Infrastructure project execution on site'} loading="lazy" />
+            <span>{isArabic ? 'من التخطيط إلى التسليم' : 'From planning to handover'}</span>
+          </div>
+          <div className="ethics-copy approach-copy reveal">
+            <div className="section-label light">{isArabic ? 'منهجيتنا' : 'Our approach'}</div>
             <h2>{isArabic ? <>تنفيذ منضبط،<br /><em>من البداية إلى النهاية.</em></> : <>Disciplined execution,<br /><em>end to end.</em></>}</h2>
             <p>{isArabic ? 'من التجهيز وحتى التسليم النهائي، تتكامل قدراتنا من خلال فرق مؤهلة وتخطيط سليم وإدارة الموارد وضبط الجودة والالتزام بالسلامة في كل مرحلة.' : 'From mobilization through final handover, our capabilities work together — qualified teams, proper planning, resource management, quality control and safety compliance embedded into every phase of delivery.'}</p>
           </div>

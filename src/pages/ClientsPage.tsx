@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
-import { clientLogos } from '@/data/content';
+import { clientLogos, projects } from '@/data/content';
 import PageHeader from '@/components/PageHeader';
 import useReveal from '@/components/useReveal';
 import { useLanguage } from '@/context/LanguageContext';
@@ -23,6 +23,11 @@ function ClientsPage() {
 
       <section className="clients section-light">
         <div className="container clients-layout">
+          <div className="client-impact reveal" aria-label={isArabic ? 'أرقام المشاريع والعملاء' : 'Project and client figures'}>
+            <article><strong>{projects.length}<span>+</span></strong><p>{isArabic ? 'مشروعاً رئيسياً' : 'Major projects'}</p></article>
+            <article><strong>14.3<span>M</span></strong><p>{isArabic ? 'ريال · أكبر قيمة مشروع' : 'SAR · largest project value'}</p></article>
+            <article><strong>{clientLogos.length}<span>+</span></strong><p>{isArabic ? 'جهة رائدة' : 'Leading organizations'}</p></article>
+          </div>
           <div className="client-wall client-logo-wall reveal" aria-label="Selected Euro Construct clients">
             {clientLogos.map((client) => (
               <div className="client-logo" key={client.name}>

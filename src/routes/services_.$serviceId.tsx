@@ -79,12 +79,12 @@ function ServiceDetailsPage() {
             <div className="section-label">{isArabic ? 'نظرة عامة' : 'Service overview'}</div>
             <h2>{isArabic ? <>خبرة منضبطة.<br /><em>تنفيذ موثوق.</em></> : <>Disciplined expertise.<br /><em>Reliable delivery.</em></>}</h2>
             <p>{isArabic ? details.overviewAr : details.overview}</p>
-          </article>
-          <aside className="service-detail-sidebar">
-            <div className="service-scope-panel">
+            <div className="service-scope-panel service-scope-inline">
               <span>{isArabic ? 'نطاق الخدمة' : 'Service scope'}</span>
               {(isArabic ? details.scopeAr : details.scope).map((item) => <div key={item}><CircleCheck size={18} /><p>{item}</p></div>)}
             </div>
+          </article>
+          <aside className="service-detail-sidebar">
             <nav className="service-directory" aria-label={isArabic ? 'قائمة الخدمات' : 'Services list'}>
               <span>{isArabic ? 'جميع الخدمات' : 'All services'}</span>
               {services.map((item, index) => (

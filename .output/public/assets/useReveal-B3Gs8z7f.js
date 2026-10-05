@@ -1,1 +1,0 @@
-import{S as e,w as t}from"./LanguageContext-CVblJuzc.js";var n=t(e(),1);function r(){(0,n.useEffect)(()=>{let e=new IntersectionObserver(e=>e.forEach(e=>e.isIntersecting&&e.target.classList.add(`is-visible`)),{threshold:.12});return document.querySelectorAll(`.reveal`).forEach(t=>e.observe(t)),()=>e.disconnect()},[])}export{r as t};
