@@ -7,16 +7,14 @@ import useReveal from '@/components/useReveal';
 import { useLanguage } from '@/context/LanguageContext';
 import { arabicLocation, categoryArabic, projectNameArabic } from '@/data/arabic';
 
-const heroProjects = [projects[9], projects[9], projects[4], projects[1]];
+const heroProjects = [projects[9], projects[4], projects[1]];
 const heroProjectArabic = [
   'مشروع الخدمات الهندسية للزكاة والضريبة والجمارك',
-  'مشروع الخدمات الهندسية لهيئة الزكاة',
   'إدارة حركة الحجاج بمحطات قطار مزدلفة 1 و2 و3',
   'مشروع محور شرق جدة',
 ];
 const heroProjectEnglish = [
   'ZATCA MEP Engineering Services Project',
-  'ZATCA Engineering Services',
   'Pilgrims Flow Management at Muzdalifah Metro Stations 1, 2 & 3',
   'East Jeddah Corridor',
 ];

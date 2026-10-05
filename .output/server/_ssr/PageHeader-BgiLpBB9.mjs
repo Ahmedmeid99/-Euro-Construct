@@ -1,6 +1,6 @@
 import { require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
-import { useLanguage } from "./router-BlPfSD1Q.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/PageHeader-D7HoEEt5.js
+import { useLanguage } from "./router-MTH9KvtT.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/PageHeader-BgiLpBB9.js
 var import_jsx_runtime = require_jsx_runtime();
 function PageHeader({ label, title, description, arabicLabel, arabicTitle, arabicDescription, dark = false, image }) {
 	const { isArabic } = useLanguage();

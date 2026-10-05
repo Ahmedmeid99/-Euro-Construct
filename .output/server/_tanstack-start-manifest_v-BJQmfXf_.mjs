@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CF5XVhOp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BJQmfXf_.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/__root.tsx",
@@ -14,21 +14,21 @@ var tsrStartManifest = () => ({ routes: {
 			"/services_/$serviceId"
 		],
 		preloads: [
-			"/assets/index-nLW9ipnR.js",
+			"/assets/index-DXJkpuAb.js",
 			"/assets/LanguageContext-C8CoXPv_.js",
 			"/assets/link-EBmUD1Fg.js"
 		],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-nLW9ipnR.js"
+			src: "/assets/index-DXJkpuAb.js"
 		} }]
 	},
 	"/": {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-C9w6Y5Wc.js",
+			"/assets/routes-j_dVf8sd.js",
 			"/assets/arrow-left-C0RjHdgp.js",
 			"/assets/map-pin-DNJrXYuR.js",
 			"/assets/move-right-DyxL-D4D.js",
@@ -41,7 +41,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/about.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/about-DeGEYPlR.js",
+			"/assets/about-zE_dwFDN.js",
 			"/assets/check-BX79Esh2.js",
 			"/assets/circle-check-Bz28BXCz.js",
 			"/assets/PageHeader-b6voFXoO.js",
@@ -53,7 +53,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/capabilities.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/capabilities-CL7xXVli.js",
+			"/assets/capabilities-B55Kwall.js",
 			"/assets/PageHeader-b6voFXoO.js",
 			"/assets/useReveal-BwpzSQcC.js",
 			"/assets/arabic-C6FyKzVK.js"
@@ -63,7 +63,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/clients.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/clients-C0A8FDb9.js",
+			"/assets/clients-Cz7gkr0i.js",
 			"/assets/PageHeader-b6voFXoO.js",
 			"/assets/useReveal-BwpzSQcC.js"
 		]
@@ -72,7 +72,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-B_OLx9aX.js",
+			"/assets/contact-CnKtCXxr.js",
 			"/assets/check-BX79Esh2.js",
 			"/assets/map-pin-DNJrXYuR.js",
 			"/assets/move-right-DyxL-D4D.js",
@@ -85,7 +85,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/projects.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/projects-B3-24zj_.js",
+			"/assets/projects-Cn2uqLrP.js",
 			"/assets/map-pin-DNJrXYuR.js",
 			"/assets/PageHeader-b6voFXoO.js",
 			"/assets/useReveal-BwpzSQcC.js",
@@ -96,7 +96,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/services.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/services-CZyDNFrZ.js",
+			"/assets/services-DZBYrbMa.js",
 			"/assets/move-right-DyxL-D4D.js",
 			"/assets/PageHeader-b6voFXoO.js",
 			"/assets/useReveal-BwpzSQcC.js",
@@ -107,7 +107,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/projects_.$projectId.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/projects_._projectId-sQRZk0nB.js",
+			"/assets/projects_._projectId-B7sGATq8.js",
 			"/assets/arrow-left-C0RjHdgp.js",
 			"/assets/circle-check-Bz28BXCz.js",
 			"/assets/map-pin-DNJrXYuR.js",
@@ -118,7 +118,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "D:/Websites/bolt/ECC Euro Construt/project/src/routes/services_.$serviceId.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/services_._serviceId-Fbt0wEKZ.js",
+			"/assets/services_._serviceId-B2EX7inL.js",
 			"/assets/arrow-left-C0RjHdgp.js",
 			"/assets/circle-check-Bz28BXCz.js",
 			"/assets/arabic-C6FyKzVK.js"

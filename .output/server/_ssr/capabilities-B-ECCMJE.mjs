@@ -1,9 +1,9 @@
 import { require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
-import { capabilities, useLanguage } from "./router-BlPfSD1Q.mjs";
-import { PageHeader } from "./PageHeader-D7HoEEt5.mjs";
+import { capabilities, useLanguage } from "./router-MTH9KvtT.mjs";
+import { PageHeader } from "./PageHeader-BgiLpBB9.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
 import { capabilityArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/capabilities-CGwC7PgM.js
+//#region node_modules/.nitro/vite/services/ssr/assets/capabilities-B-ECCMJE.js
 var import_jsx_runtime = require_jsx_runtime();
 function CapabilitiesPage() {
 	const { isArabic } = useLanguage();

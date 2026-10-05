@@ -1,8 +1,8 @@
 import { Link, require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowLeft, ArrowUpRight, CircleCheck } from "../_libs/lucide-react.mjs";
-import { Route, getServiceSlug, services, useLanguage } from "./router-BlPfSD1Q.mjs";
+import { Route, getServiceSlug, services, useLanguage } from "./router-MTH9KvtT.mjs";
 import { serviceArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services_._serviceId-xvHKAZfT.js
+//#region node_modules/.nitro/vite/services/ssr/assets/services_._serviceId-g906_uIB.js
 var import_jsx_runtime = require_jsx_runtime();
 var serviceDetails = {
 	"General Contracting": {

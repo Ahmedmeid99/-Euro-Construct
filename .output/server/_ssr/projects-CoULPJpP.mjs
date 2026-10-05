@@ -1,10 +1,10 @@
 import { Link, require_jsx_runtime, useSearch } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowUpRight, MapPin } from "../_libs/lucide-react.mjs";
-import { categories, getProjectSlug, projects, useLanguage } from "./router-BlPfSD1Q.mjs";
-import { PageHeader } from "./PageHeader-D7HoEEt5.mjs";
+import { categories, getProjectSlug, projects, useLanguage } from "./router-MTH9KvtT.mjs";
+import { PageHeader } from "./PageHeader-BgiLpBB9.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
 import { arabicLocation, categoryArabic, projectNameArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/projects-D-Cz7ZHK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/projects-CoULPJpP.js
 var import_jsx_runtime = require_jsx_runtime();
 function ProjectsGallery() {
 	const { isArabic } = useLanguage();

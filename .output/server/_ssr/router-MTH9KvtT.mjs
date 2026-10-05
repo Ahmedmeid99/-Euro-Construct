@@ -377,7 +377,7 @@ var navPaths = {
 	Contact: "/contact"
 };
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BlPfSD1Q.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-MTH9KvtT.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -767,32 +767,32 @@ function NotFound() {
 		})
 	});
 }
-var $$splitComponentImporter$8 = () => import("./routes-CKyd8tt9.mjs");
+var $$splitComponentImporter$8 = () => import("./routes-lLt9kJYp.mjs");
 var Route$8 = createFileRoute("/")({
 	head: () => ({ meta: [{ title: "Euro Construct for Contracting | Building with discipline" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./about-CMwCs4GO.mjs");
+var $$splitComponentImporter$7 = () => import("./about-CcAa3yLk.mjs");
 var Route$7 = createFileRoute("/about")({
 	head: () => ({ meta: [{ title: "About | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$7, "component")
 });
-var $$splitComponentImporter$6 = () => import("./capabilities-CGwC7PgM.mjs");
+var $$splitComponentImporter$6 = () => import("./capabilities-B-ECCMJE.mjs");
 var Route$6 = createFileRoute("/capabilities")({
 	head: () => ({ meta: [{ title: "Capabilities | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./clients-C7M7-Fpm.mjs");
+var $$splitComponentImporter$5 = () => import("./clients-CZgmw7L-.mjs");
 var Route$5 = createFileRoute("/clients")({
 	head: () => ({ meta: [{ title: "Clients | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./contact-oxiM2Sh1.mjs");
+var $$splitComponentImporter$4 = () => import("./contact-DgHepSu2.mjs");
 var Route$4 = createFileRoute("/contact")({
 	head: () => ({ meta: [{ title: "Contact | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./projects-D-Cz7ZHK.mjs");
+var $$splitComponentImporter$3 = () => import("./projects-CoULPJpP.mjs");
 var Route$3 = createFileRoute("/projects")({
 	validateSearch: (search) => {
 		const category = search.category;
@@ -801,12 +801,12 @@ var Route$3 = createFileRoute("/projects")({
 	head: () => ({ meta: [{ title: "Projects | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services-B3_ONPWY.mjs");
+var $$splitComponentImporter$2 = () => import("./services-CN5vWDme.mjs");
 var Route$2 = createFileRoute("/services")({
 	head: () => ({ meta: [{ title: "Services | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./projects_._projectId-C1sGkKy-.mjs");
+var $$splitComponentImporter$1 = () => import("./projects_._projectId-BAfmVBaJ.mjs");
 var Route$1 = createFileRoute("/projects_/$projectId")({
 	loader: ({ params }) => {
 		const project = getProjectBySlug(params.projectId);
@@ -826,7 +826,7 @@ var Route$1 = createFileRoute("/projects_/$projectId")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./services_._serviceId-xvHKAZfT.mjs");
+var $$splitComponentImporter = () => import("./services_._serviceId-g906_uIB.mjs");
 var Route = createFileRoute("/services_/$serviceId")({
 	loader: ({ params }) => {
 		const service = getServiceBySlug(params.serviceId);

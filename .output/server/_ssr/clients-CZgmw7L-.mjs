@@ -1,9 +1,9 @@
 import { Link, require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowUpRight } from "../_libs/lucide-react.mjs";
-import { clientLogos, projects, useLanguage } from "./router-BlPfSD1Q.mjs";
-import { PageHeader } from "./PageHeader-D7HoEEt5.mjs";
+import { clientLogos, projects, useLanguage } from "./router-MTH9KvtT.mjs";
+import { PageHeader } from "./PageHeader-BgiLpBB9.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/clients-C7M7-Fpm.js
+//#region node_modules/.nitro/vite/services/ssr/assets/clients-CZgmw7L-.js
 var import_jsx_runtime = require_jsx_runtime();
 function ClientsPage() {
 	const { isArabic } = useLanguage();

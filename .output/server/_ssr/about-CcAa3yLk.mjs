@@ -1,10 +1,10 @@
 import { require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { Check, CircleCheck } from "../_libs/lucide-react.mjs";
-import { images, useLanguage, values } from "./router-BlPfSD1Q.mjs";
-import { PageHeader } from "./PageHeader-D7HoEEt5.mjs";
+import { images, useLanguage, values } from "./router-MTH9KvtT.mjs";
+import { PageHeader } from "./PageHeader-BgiLpBB9.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
 import { ethicsArabic, valueArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/about-CMwCs4GO.js
+//#region node_modules/.nitro/vite/services/ssr/assets/about-CcAa3yLk.js
 var import_jsx_runtime = require_jsx_runtime();
 var ethics = [
 	["Accountability", "We take responsibility for every decision and project outcome."],
