@@ -1,8 +1,8 @@
 import { Link, require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowLeft, ArrowUpRight, Building2, CircleCheck, MapPin, Users } from "../_libs/lucide-react.mjs";
-import { Route$1, getProjectSlug, projects, useLanguage } from "./router-MTH9KvtT.mjs";
+import { Route$1, getProjectSlug, projects, useLanguage } from "./router-DB--jhjD.mjs";
 import { arabicLocation, arabicProjectServices, arabicProjectSummary, categoryArabic, projectNameArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/projects_._projectId-BAfmVBaJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/projects_._projectId-DV_QoMsr.js
 var import_jsx_runtime = require_jsx_runtime();
 function ProjectDetailsPage() {
 	const { isArabic } = useLanguage();

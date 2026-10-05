@@ -1,5 +1,5 @@
 import { __toESM } from "../_runtime.mjs";
-import { HeadContent, Link, Outlet, Scripts, createFileRoute, createRootRoute, createRouter, lazyRouteComponent, notFound, require_jsx_runtime, require_react } from "../_libs/@tanstack/react-router+[...].mjs";
+import { HeadContent, Link, Outlet, Scripts, createFileRoute, createRootRoute, createRouter, lazyRouteComponent, notFound, require_jsx_runtime, require_react, useLocation } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowUpRight, Building2, ChevronDown, ChevronRight, ClipboardCheck, Construction, FileCheck2, HardHat, Landmark, Languages, Layers3, Menu, Ruler, ShieldCheck, Target, Users, X } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/content-B9kEIWCL.js
 var images = {
@@ -377,7 +377,7 @@ var navPaths = {
 	Contact: "/contact"
 };
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-MTH9KvtT.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DB--jhjD.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -452,7 +452,10 @@ function Header() {
 	const [menuOpen, setMenuOpen] = (0, import_react.useState)(false);
 	const [scrolled, setScrolled] = (0, import_react.useState)(false);
 	const { isArabic, toggleLanguage } = useLanguage();
+	const pathname = useLocation({ select: (location) => location.pathname });
 	const closeMenu = () => setMenuOpen(false);
+	const isCurrentRoute = (path) => path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(`${path}/`);
+	const companyActive = companyItems.some((item) => isCurrentRoute(navPaths[item]));
 	(0, import_react.useEffect)(() => {
 		const updateHeader = () => setScrolled(window.scrollY > 24);
 		updateHeader();
@@ -476,16 +479,15 @@ function Header() {
 					"aria-label": "Main navigation",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-							className: "nav-link",
+							className: `nav-link ${isCurrentRoute("/") ? "nav-active" : ""}`,
 							to: "/",
-							activeProps: { className: "nav-link nav-active" },
-							activeOptions: { exact: true },
+							"aria-current": isCurrentRoute("/") ? "page" : void 0,
 							children: isArabic ? arabicNav$1.Home : "Home"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "nav-group",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-								className: "nav-link nav-group-trigger",
+								className: `nav-link nav-group-trigger ${companyActive ? "nav-active" : ""}`,
 								type: "button",
 								"aria-haspopup": "true",
 								children: [
@@ -495,20 +497,26 @@ function Header() {
 								]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "nav-dropdown",
-								children: companyItems.map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
-									to: navPaths[item],
-									activeProps: { className: "nav-dropdown-link nav-active" },
-									className: "nav-dropdown-link",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: isArabic ? arabicNav$1[item] : item }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 14 })]
-								}, item))
+								children: companyItems.map((item) => {
+									const active = isCurrentRoute(navPaths[item]);
+									return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+										to: navPaths[item],
+										className: `nav-dropdown-link ${active ? "nav-active" : ""}`,
+										"aria-current": active ? "page" : void 0,
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: isArabic ? arabicNav$1[item] : item }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 14 })]
+									}, item);
+								})
 							})]
 						}),
-						["Services", "Projects"].map((item) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-							className: "nav-link",
-							to: navPaths[item],
-							activeProps: { className: "nav-link nav-active" },
-							children: isArabic ? arabicNav$1[item] : item
-						}, item))
+						["Services", "Projects"].map((item) => {
+							const active = isCurrentRoute(navPaths[item]);
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								className: `nav-link ${active ? "nav-active" : ""}`,
+								to: navPaths[item],
+								"aria-current": active ? "page" : void 0,
+								children: isArabic ? arabicNav$1[item] : item
+							}, item);
+						})
 					]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
@@ -554,15 +562,17 @@ function Header() {
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mobile-nav-links",
 				children: [
-					navItems.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
-						className: "mobile-nav-link",
-						to: navPaths[item],
-						activeProps: { className: "mobile-nav-link nav-active" },
-						activeOptions: { exact: item === "Home" },
-						onClick: closeMenu,
-						style: { animationDelay: `${index * 40}ms` },
-						children: [isArabic ? arabicNav$1[item] : item, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { size: 18 })]
-					}, item)),
+					navItems.map((item, index) => {
+						const active = isCurrentRoute(navPaths[item]);
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+							className: `mobile-nav-link ${active ? "nav-active" : ""}`,
+							to: navPaths[item],
+							onClick: closeMenu,
+							style: { animationDelay: `${index * 40}ms` },
+							"aria-current": active ? "page" : void 0,
+							children: [isArabic ? arabicNav$1[item] : item, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { size: 18 })]
+						}, item);
+					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 						className: "mobile-language-switch",
 						type: "button",
@@ -675,7 +685,7 @@ function Footer() {
 		})
 	});
 }
-var src_default = "/assets/index-CsYcR-7a.css";
+var src_default = "/assets/index-D6P_sb2I.css";
 var description = "Euro Construct is a contracting and construction company providing integrated project support across Saudi Arabia.";
 var Route$9 = createRootRoute({
 	head: () => ({
@@ -767,32 +777,32 @@ function NotFound() {
 		})
 	});
 }
-var $$splitComponentImporter$8 = () => import("./routes-lLt9kJYp.mjs");
+var $$splitComponentImporter$8 = () => import("./routes-Bgu8ftBu.mjs");
 var Route$8 = createFileRoute("/")({
 	head: () => ({ meta: [{ title: "Euro Construct for Contracting | Building with discipline" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./about-CcAa3yLk.mjs");
+var $$splitComponentImporter$7 = () => import("./about-C3U1JROm.mjs");
 var Route$7 = createFileRoute("/about")({
 	head: () => ({ meta: [{ title: "About | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$7, "component")
 });
-var $$splitComponentImporter$6 = () => import("./capabilities-B-ECCMJE.mjs");
+var $$splitComponentImporter$6 = () => import("./capabilities-D-1f_VC8.mjs");
 var Route$6 = createFileRoute("/capabilities")({
 	head: () => ({ meta: [{ title: "Capabilities | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-var $$splitComponentImporter$5 = () => import("./clients-CZgmw7L-.mjs");
+var $$splitComponentImporter$5 = () => import("./clients-DM6upK-_.mjs");
 var Route$5 = createFileRoute("/clients")({
 	head: () => ({ meta: [{ title: "Clients | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-var $$splitComponentImporter$4 = () => import("./contact-DgHepSu2.mjs");
+var $$splitComponentImporter$4 = () => import("./contact-COj30w8n.mjs");
 var Route$4 = createFileRoute("/contact")({
 	head: () => ({ meta: [{ title: "Contact | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./projects-CoULPJpP.mjs");
+var $$splitComponentImporter$3 = () => import("./projects-Bg1JBaKR.mjs");
 var Route$3 = createFileRoute("/projects")({
 	validateSearch: (search) => {
 		const category = search.category;
@@ -801,12 +811,12 @@ var Route$3 = createFileRoute("/projects")({
 	head: () => ({ meta: [{ title: "Projects | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services-CN5vWDme.mjs");
+var $$splitComponentImporter$2 = () => import("./services-iIASCTaC.mjs");
 var Route$2 = createFileRoute("/services")({
 	head: () => ({ meta: [{ title: "Services | Euro Construct for Contracting" }] }),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./projects_._projectId-BAfmVBaJ.mjs");
+var $$splitComponentImporter$1 = () => import("./projects_._projectId-DV_QoMsr.mjs");
 var Route$1 = createFileRoute("/projects_/$projectId")({
 	loader: ({ params }) => {
 		const project = getProjectBySlug(params.projectId);
@@ -826,7 +836,7 @@ var Route$1 = createFileRoute("/projects_/$projectId")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./services_._serviceId-g906_uIB.mjs");
+var $$splitComponentImporter = () => import("./services_._serviceId-DNMbTRIw.mjs");
 var Route = createFileRoute("/services_/$serviceId")({
 	loader: ({ params }) => {
 		const service = getServiceBySlug(params.serviceId);

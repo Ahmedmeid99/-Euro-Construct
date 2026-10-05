@@ -1,9 +1,9 @@
 import { Link, require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowUpRight } from "../_libs/lucide-react.mjs";
-import { clientLogos, projects, useLanguage } from "./router-MTH9KvtT.mjs";
-import { PageHeader } from "./PageHeader-BgiLpBB9.mjs";
+import { clientLogos, projects, useLanguage } from "./router-DB--jhjD.mjs";
+import { PageHeader } from "./PageHeader-Dfodu1I4.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/clients-CZgmw7L-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/clients-DM6upK-_.js
 var import_jsx_runtime = require_jsx_runtime();
 function ClientsPage() {
 	const { isArabic } = useLanguage();
@@ -45,34 +45,47 @@ function ClientsPage() {
 			})
 		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-			className: "cta section-dark",
+			className: "cta partner-cta section-dark",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "container cta-inner reveal",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "section-label light",
-						children: isArabic ? "كن شريكاً لنا" : "Partner with us"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: isArabic ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-						"نبني بمسؤولية.",
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "ونسلّم بموثوقية." })
-					] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-						"Built responsibly.",
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "Delivered reliably." })
-					] }) }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: isArabic ? "انضم إلى الجهات التي تثق بيورو كونستركت لدعم أعمال الإنشاء والبنية التحتية وتنفيذ المشاريع." : "Join the organizations that trust Euro Construct to support their construction, infrastructure, and project delivery." }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
-						className: "button",
-						to: "/contact",
-						children: [
-							isArabic ? "ناقش مشروعك القادم" : "Discuss your next project",
-							" ",
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 17 })
-						]
-					})
-				]
+				className: "container partner-grid reveal",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "cta-inner",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "section-label light",
+							children: isArabic ? "كن شريكاً لنا" : "Partner with us"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: isArabic ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+							"نبني بمسؤولية.",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "ونسلّم بموثوقية." })
+						] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+							"Built responsibly.",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "Delivered reliably." })
+						] }) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: isArabic ? "انضم إلى الجهات التي تثق بيورو كونستركت لدعم أعمال الإنشاء والبنية التحتية وتنفيذ المشاريع." : "Join the organizations that trust Euro Construct to support their construction, infrastructure, and project delivery." }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+							className: "button",
+							to: "/contact",
+							children: [
+								isArabic ? "ناقش مشروعك القادم" : "Discuss your next project",
+								" ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 17 })
+							]
+						})
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "partner-visual",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: "/profile/project-17.jpg",
+						alt: isArabic ? "بيئة مشروع احترافية لشركاء يورو كونستركت" : "A professional project environment for Euro Construct partners",
+						loading: "lazy"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "partner-counter",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", { children: [clientLogos.length, /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "+" })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: isArabic ? "جهة رائدة تثق بخبراتنا" : "Leading organizations trust our delivery" })]
+					})]
+				})]
 			})
 		})
 	] });

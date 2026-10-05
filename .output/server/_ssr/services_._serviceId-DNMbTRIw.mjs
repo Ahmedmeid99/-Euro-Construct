@@ -1,8 +1,8 @@
 import { Link, require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowLeft, ArrowUpRight, CircleCheck } from "../_libs/lucide-react.mjs";
-import { Route, getServiceSlug, services, useLanguage } from "./router-MTH9KvtT.mjs";
+import { Route, getServiceSlug, services, useLanguage } from "./router-DB--jhjD.mjs";
 import { serviceArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services_._serviceId-g906_uIB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/services_._serviceId-DNMbTRIw.js
 var import_jsx_runtime = require_jsx_runtime();
 var serviceDetails = {
 	"General Contracting": {
@@ -160,10 +160,11 @@ function ServiceDetailsPage() {
 							className: `service-directory-link ${item.title === service.title ? "is-active" : ""}`,
 							to: "/services/$serviceId",
 							params: { serviceId: getServiceSlug(item) },
+							"aria-current": item.title === service.title ? "page" : void 0,
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("small", { children: ["0", index + 1] }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: isArabic ? serviceArabic[item.title][0] : item.title }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 16 })
+								item.title === service.title ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { size: 17 }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { size: 16 })
 							]
 						}, item.title))]
 					})

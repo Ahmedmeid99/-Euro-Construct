@@ -38,12 +38,21 @@ function ClientsPage() {
         </div>
       </section>
 
-      <section className="cta section-dark">
-        <div className="container cta-inner reveal">
-          <div className="section-label light">{isArabic ? 'كن شريكاً لنا' : 'Partner with us'}</div>
-          <h2>{isArabic ? <>نبني بمسؤولية.<br /><em>ونسلّم بموثوقية.</em></> : <>Built responsibly.<br /><em>Delivered reliably.</em></>}</h2>
-          <p>{isArabic ? 'انضم إلى الجهات التي تثق بيورو كونستركت لدعم أعمال الإنشاء والبنية التحتية وتنفيذ المشاريع.' : 'Join the organizations that trust Euro Construct to support their construction, infrastructure, and project delivery.'}</p>
-          <Link className="button" to="/contact">{isArabic ? 'ناقش مشروعك القادم' : 'Discuss your next project'} <ArrowUpRight size={17} /></Link>
+      <section className="cta partner-cta section-dark">
+        <div className="container partner-grid reveal">
+          <div className="cta-inner">
+            <div className="section-label light">{isArabic ? 'كن شريكاً لنا' : 'Partner with us'}</div>
+            <h2>{isArabic ? <>نبني بمسؤولية.<br /><em>ونسلّم بموثوقية.</em></> : <>Built responsibly.<br /><em>Delivered reliably.</em></>}</h2>
+            <p>{isArabic ? 'انضم إلى الجهات التي تثق بيورو كونستركت لدعم أعمال الإنشاء والبنية التحتية وتنفيذ المشاريع.' : 'Join the organizations that trust Euro Construct to support their construction, infrastructure, and project delivery.'}</p>
+            <Link className="button" to="/contact">{isArabic ? 'ناقش مشروعك القادم' : 'Discuss your next project'} <ArrowUpRight size={17} /></Link>
+          </div>
+          <div className="partner-visual">
+            <img src="/profile/project-17.jpg" alt={isArabic ? 'بيئة مشروع احترافية لشركاء يورو كونستركت' : 'A professional project environment for Euro Construct partners'} loading="lazy" />
+            <div className="partner-counter">
+              <strong>{clientLogos.length}<span>+</span></strong>
+              <p>{isArabic ? 'جهة رائدة تثق بخبراتنا' : 'Leading organizations trust our delivery'}</p>
+            </div>
+          </div>
         </div>
       </section>
     </>

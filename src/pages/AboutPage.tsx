@@ -80,7 +80,13 @@ function AboutPage() {
       <section className="ethics section-dark">
         <div className="ethics-lines" />
         <div className="container ethics-content">
-          <div className="section-label light">{isArabic ? 'الأخلاقيات وقواعد السلوك' : 'Ethics & code of conduct'}</div>
+          <div className="ethics-visual reveal">
+            <div className="section-label light">{isArabic ? 'الأخلاقيات وقواعد السلوك' : 'Ethics & code of conduct'}</div>
+            <div className="ethics-image-card">
+              <img src="/profile/project-01.jpg" alt={isArabic ? 'مشروع صناعي يعكس التنفيذ المسؤول' : 'Industrial project representing responsible delivery'} loading="lazy" />
+              <div className="ethics-stat"><strong>05</strong><span>{isArabic ? 'التزامات تحكم كل قرار' : 'Commitments behind every decision'}</span></div>
+            </div>
+          </div>
           <div className="ethics-copy">
             <h2>{isArabic ? <>الثقة ليست مجرد شعار.<br /><em>بل ممارسة يومية.</em></> : <>Trust is not a claim.<br /><em>It is a practice.</em></>}</h2>
             <p>{isArabic ? 'يرتكز عملنا على المساءلة والشفافية والامتثال والسلامة والعدالة؛ وهي المعايير التي تحمي الأفراد والمشاريع والشراكات.' : 'Our work is grounded in accountability, transparency, compliance, safety and fairness — the standards that protect people, projects and partnerships.'}</p>

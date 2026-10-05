@@ -7985,6 +7985,26 @@ function RouterProvider({ router, ...rest }) {
 	});
 }
 //#endregion
+//#region node_modules/@tanstack/react-router/dist/esm/useLocation.js
+/**
+* Read the current location from the router state with optional selection.
+* Useful for subscribing to just the pieces of location you care about.
+*
+* Options:
+* - `select`: Project the `location` object to a derived value
+* - `structuralSharing`: Enable structural sharing for stable references
+*
+* @returns The current location (or selected value).
+* @link https://tanstack.com/router/latest/docs/framework/react/api/router/useLocationHook
+*/
+function useLocation(opts) {
+	const router = useRouter();
+	{
+		const location = router.stores.location.get();
+		return opts?.select ? opts.select(location) : location;
+	}
+}
+//#endregion
 //#region node_modules/@tanstack/react-router/dist/esm/Asset.js
 var noopScriptHandler = () => {};
 function setScriptAttrs(script, attrs) {
@@ -12729,4 +12749,4 @@ var renderRouterToStream = async ({ request, router, responseHeaders, children }
 	}
 };
 //#endregion
-export { GLOBAL_TSR, HeadContent, Link, Outlet, RouterProvider, Scripts, _getRenderedMatches, bindSsrResponseToRequest, createFileRoute, createHydrationScripts, createInlineCssPlaceholderAsset, createInlineCssStyleAsset, createPlugin, createRootRoute, createRouter, createSieveCache, createStream, crossSerializeStream, decodePath, defineHandlerCallback, dehydrateSsrMatchId, disposeSsrResponse, executeRewriteInput, fromJSON, getScriptPreloadAttrs, getStylesheetHref, invariant, isDangerousProtocol, isNotFound, isPromise, isRedirect, isSsrResponse, isStream, lazyRouteComponent, normalizeSsrResponse, notFound, renderRouterToStream, replaceSsrResponse, require_jsx_runtime, require_react, resolveManifestAssetLink, resolveManifestCssLink, rootRouteId, stripSsrResponseBody, toCrossJSONAsync, toCrossJSONStream, useSearch, waitForReason };
+export { GLOBAL_TSR, HeadContent, Link, Outlet, RouterProvider, Scripts, _getRenderedMatches, bindSsrResponseToRequest, createFileRoute, createHydrationScripts, createInlineCssPlaceholderAsset, createInlineCssStyleAsset, createPlugin, createRootRoute, createRouter, createSieveCache, createStream, crossSerializeStream, decodePath, defineHandlerCallback, dehydrateSsrMatchId, disposeSsrResponse, executeRewriteInput, fromJSON, getScriptPreloadAttrs, getStylesheetHref, invariant, isDangerousProtocol, isNotFound, isPromise, isRedirect, isSsrResponse, isStream, lazyRouteComponent, normalizeSsrResponse, notFound, renderRouterToStream, replaceSsrResponse, require_jsx_runtime, require_react, resolveManifestAssetLink, resolveManifestCssLink, rootRouteId, stripSsrResponseBody, toCrossJSONAsync, toCrossJSONStream, useLocation, useSearch, waitForReason };

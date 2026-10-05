@@ -1,10 +1,10 @@
 import { require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { Check, CircleCheck } from "../_libs/lucide-react.mjs";
-import { images, useLanguage, values } from "./router-MTH9KvtT.mjs";
-import { PageHeader } from "./PageHeader-BgiLpBB9.mjs";
+import { images, useLanguage, values } from "./router-DB--jhjD.mjs";
+import { PageHeader } from "./PageHeader-Dfodu1I4.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
 import { ethicsArabic, valueArabic } from "./arabic-DBybkNQG.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/about-CcAa3yLk.js
+//#region node_modules/.nitro/vite/services/ssr/assets/about-C3U1JROm.js
 var import_jsx_runtime = require_jsx_runtime();
 var ethics = [
 	["Accountability", "We take responsibility for every decision and project outcome."],
@@ -107,9 +107,22 @@ function AboutPage() {
 			className: "ethics section-dark",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "ethics-lines" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "container ethics-content",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "section-label light",
-					children: isArabic ? "الأخلاقيات وقواعد السلوك" : "Ethics & code of conduct"
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "ethics-visual reveal",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "section-label light",
+						children: isArabic ? "الأخلاقيات وقواعد السلوك" : "Ethics & code of conduct"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "ethics-image-card",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/profile/project-01.jpg",
+							alt: isArabic ? "مشروع صناعي يعكس التنفيذ المسؤول" : "Industrial project representing responsible delivery",
+							loading: "lazy"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "ethics-stat",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "05" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: isArabic ? "التزامات تحكم كل قرار" : "Commitments behind every decision" })]
+						})]
+					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "ethics-copy",
 					children: [

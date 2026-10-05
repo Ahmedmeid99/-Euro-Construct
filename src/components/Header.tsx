@@ -1,6 +1,6 @@
 import { ArrowUpRight, Menu, X, ChevronRight, ChevronDown, Languages } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Link } from '@tanstack/react-router';
+import { Link, useLocation } from '@tanstack/react-router';
 import Brand from './Brand';
 import { navItems, navPaths } from '@/data/content';
 import { useLanguage } from '@/context/LanguageContext';
@@ -16,7 +16,10 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isArabic, toggleLanguage } = useLanguage();
+  const pathname = useLocation({ select: (location) => location.pathname });
   const closeMenu = () => setMenuOpen(false);
+  const isCurrentRoute = (path: string) => path === '/' ? pathname === '/' : pathname === path || pathname.startsWith(`${path}/`);
+  const companyActive = companyItems.some((item) => isCurrentRoute(navPaths[item]));
 
   useEffect(() => {
     const updateHeader = () => setScrolled(window.scrollY > 24);
@@ -36,26 +39,32 @@ function Header() {
         <div className="container site-header-inner">
           <Brand onClick={closeMenu} />
           <nav className="desktop-nav" aria-label="Main navigation">
-            <Link className="nav-link" to="/" activeProps={{ className: 'nav-link nav-active' }} activeOptions={{ exact: true }}>
+            <Link className={`nav-link ${isCurrentRoute('/') ? 'nav-active' : ''}`} to="/" aria-current={isCurrentRoute('/') ? 'page' : undefined}>
               {isArabic ? arabicNav.Home : 'Home'}
             </Link>
             <div className="nav-group">
-              <button className="nav-link nav-group-trigger" type="button" aria-haspopup="true">
+              <button className={`nav-link nav-group-trigger ${companyActive ? 'nav-active' : ''}`} type="button" aria-haspopup="true">
                 {isArabic ? 'الشركة' : 'Company'} <ChevronDown size={14} />
               </button>
               <div className="nav-dropdown">
-                {companyItems.map((item) => (
-                  <Link key={item} to={navPaths[item]} activeProps={{ className: 'nav-dropdown-link nav-active' }} className="nav-dropdown-link">
+                {companyItems.map((item) => {
+                  const active = isCurrentRoute(navPaths[item]);
+                  return (
+                  <Link key={item} to={navPaths[item]} className={`nav-dropdown-link ${active ? 'nav-active' : ''}`} aria-current={active ? 'page' : undefined}>
                     <span>{isArabic ? arabicNav[item] : item}</span><ArrowUpRight size={14} />
                   </Link>
-                ))}
+                  );
+                })}
               </div>
             </div>
-            {(['Services', 'Projects'] as const).map((item) => (
-              <Link key={item} className="nav-link" to={navPaths[item]} activeProps={{ className: 'nav-link nav-active' }}>
+            {(['Services', 'Projects'] as const).map((item) => {
+              const active = isCurrentRoute(navPaths[item]);
+              return (
+              <Link key={item} className={`nav-link ${active ? 'nav-active' : ''}`} to={navPaths[item]} aria-current={active ? 'page' : undefined}>
                 {isArabic ? arabicNav[item] : item}
               </Link>
-            ))}
+              );
+            })}
           </nav>
           <button className="language-switch desktop-language-switch" type="button" onClick={toggleLanguage} aria-label={isArabic ? 'Switch to English' : 'التبديل إلى العربية'}>
             {isArabic ? 'EN' : 'العربية'}
@@ -80,20 +89,22 @@ function Header() {
               </button>
             </div>
             <div className="mobile-nav-links">
-              {navItems.map((item, index) => (
+              {navItems.map((item, index) => {
+                const active = isCurrentRoute(navPaths[item]);
+                return (
                 <Link
                   key={item}
-                  className="mobile-nav-link"
+                  className={`mobile-nav-link ${active ? 'nav-active' : ''}`}
                   to={navPaths[item]}
-                  activeProps={{ className: 'mobile-nav-link nav-active' }}
-                  activeOptions={{ exact: item === 'Home' }}
                   onClick={closeMenu}
                   style={{ animationDelay: `${index * 40}ms` }}
+                  aria-current={active ? 'page' : undefined}
                 >
                   {isArabic ? arabicNav[item] : item}
                   <ChevronRight size={18} />
                 </Link>
-              ))}
+                );
+              })}
               <button className="mobile-language-switch" type="button" onClick={toggleLanguage} aria-label={isArabic ? 'Switch to English' : 'التبديل إلى العربية'}>
                 <Languages size={16} />
                 <span>{isArabic ? 'English' : 'العربية'}</span>

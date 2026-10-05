@@ -1,11 +1,11 @@
 import { __toESM } from "../_runtime.mjs";
 import { Link, require_jsx_runtime, require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Compass, MapPin, MoveRight, Pause, Play, ShieldCheck, Target } from "../_libs/lucide-react.mjs";
-import { capabilities, clientLogos, getProjectSlug, getServiceSlug, images, projects, services, useLanguage } from "./router-MTH9KvtT.mjs";
+import { capabilities, clientLogos, getProjectSlug, getServiceSlug, images, projects, services, useLanguage } from "./router-DB--jhjD.mjs";
 import { useReveal } from "./useReveal-KP071FMv.mjs";
 import { arabicLocation, categoryArabic, projectNameArabic } from "./arabic-DBybkNQG.mjs";
 import { branches } from "./branches-IiR2Jopg.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-lLt9kJYp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Bgu8ftBu.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var heroProjects = [

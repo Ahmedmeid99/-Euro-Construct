@@ -88,10 +88,16 @@ function ServiceDetailsPage() {
             <nav className="service-directory" aria-label={isArabic ? 'قائمة الخدمات' : 'Services list'}>
               <span>{isArabic ? 'جميع الخدمات' : 'All services'}</span>
               {services.map((item, index) => (
-                <Link className={`service-directory-link ${item.title === service.title ? 'is-active' : ''}`} to="/services/$serviceId" params={{ serviceId: getServiceSlug(item) }} key={item.title}>
+                <Link
+                  className={`service-directory-link ${item.title === service.title ? 'is-active' : ''}`}
+                  to="/services/$serviceId"
+                  params={{ serviceId: getServiceSlug(item) }}
+                  key={item.title}
+                  aria-current={item.title === service.title ? 'page' : undefined}
+                >
                   <small>0{index + 1}</small>
                   <strong>{isArabic ? serviceArabic[item.title][0] : item.title}</strong>
-                  <ArrowUpRight size={16} />
+                  {item.title === service.title ? <CircleCheck size={17} /> : <ArrowUpRight size={16} />}
                 </Link>
               ))}
             </nav>

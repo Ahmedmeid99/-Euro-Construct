@@ -1,6 +1,6 @@
-import { ArrowUpRight, MoveRight } from 'lucide-react';
+import { ArrowUpRight, MoveRight, ShieldCheck } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
-import { getServiceSlug, services } from '@/data/content';
+import { getServiceSlug, projects, services } from '@/data/content';
 import PageHeader from '@/components/PageHeader';
 import useReveal from '@/components/useReveal';
 import { useLanguage } from '@/context/LanguageContext';
@@ -41,11 +41,25 @@ function ServicesPage() {
       </section>
 
       <section className="cta section-dark">
-        <div className="container cta-inner reveal">
-          <div className="section-label light">{isArabic ? 'الجودة والسلامة' : 'Quality & safety'}</div>
-          <h2>{isArabic ? <>نبني بمسؤولية.<br /><em>ونسلّم بموثوقية.</em></> : <>Built responsibly.<br /><em>Delivered reliably.</em></>}</h2>
-          <p>{isArabic ? 'ممارسات عمل آمنة وضبط للجودة وتنفيذ موثوق وبناء مسؤول في كل مشروع.' : 'Safe working practices, quality control, reliable project execution and responsible construction — built into every engagement.'}</p>
-          <Link className="button" to="/contact">{isArabic ? 'ناقش مشروعك القادم' : 'Discuss your next project'} <ArrowUpRight size={17} /></Link>
+        <div className="container quality-grid reveal">
+          <div className="cta-inner">
+            <div className="section-label light">{isArabic ? 'الجودة والسلامة' : 'Quality & safety'}</div>
+            <span className="quality-mark"><ShieldCheck size={24} /> {isArabic ? 'التزام في كل موقع' : 'Built into every site'}</span>
+            <h2>{isArabic ? <>نبني بمسؤولية.<br /><em>ونسلّم بموثوقية.</em></> : <>Built responsibly.<br /><em>Delivered reliably.</em></>}</h2>
+            <p>{isArabic ? 'ممارسات عمل آمنة وضبط للجودة وتنفيذ موثوق وبناء مسؤول في كل مشروع.' : 'Safe working practices, quality control, reliable project execution and responsible construction — built into every engagement.'}</p>
+            <Link className="button" to="/contact">{isArabic ? 'ناقش مشروعك القادم' : 'Discuss your next project'} <ArrowUpRight size={17} /></Link>
+          </div>
+          <div className="quality-showcase">
+            <div className="quality-image">
+              <img src={projects[1].image} alt={isArabic ? 'تنفيذ مشروع يورو كونستركت في الموقع' : 'Euro Construct project delivery on site'} loading="lazy" />
+              <span><ShieldCheck size={18} /> {isArabic ? 'تنفيذ منضبط من الموقع إلى التسليم' : 'Disciplined delivery, from site to handover'}</span>
+            </div>
+            <div className="quality-principles">
+              <article><b>01</b><strong>{isArabic ? 'ضبط الجودة' : 'Quality control'}</strong><span>{isArabic ? 'فحوصات ومتابعة منظمة' : 'Structured checks and oversight'}</span></article>
+              <article><b>02</b><strong>{isArabic ? 'السلامة أولاً' : 'Safety-led sites'}</strong><span>{isArabic ? 'ممارسات تحمي الفرق والمواقع' : 'Practices that protect people and sites'}</span></article>
+              <article><b>03</b><strong>{isArabic ? 'تسليم موثوق' : 'Reliable handover'}</strong><span>{isArabic ? 'تنسيق واضح حتى الإنجاز' : 'Clear coordination through completion'}</span></article>
+            </div>
+          </div>
         </div>
       </section>
     </>
